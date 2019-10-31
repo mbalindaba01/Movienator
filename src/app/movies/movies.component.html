@@ -1,0 +1,41 @@
+<app-search-bar></app-search-bar>
+<h1>{{title}}</h1>
+<div class="container-fluid">
+<form class="form-inline active-pink-3 active-pink-4">
+<i class="fas fa-search" aria-hidden="true"></i>
+<input type="text" (keyup)="searchTerm$.next($event.target.value)" class="form-control form-control-sm ml-3 w-75" placeholder="search" aria-label="Search">
+</form>
+</div>
+<div  class="container" style="margin-top:80px">
+    <div *ngIf="movies" class="row mt-5">
+    <div *ngFor="let movie of movies; let i=index"  style="margin-top:30px" class="col-12 col-md-4 col-sm-12 col-lg-3 col-xl-3">  
+        <div class="card" class="card h-100">
+        <img class="card-img-top" style="height:65%" src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}">
+        <div class="card-body" style="height:10%">
+            <h5 class="card-title">{{movie.title}}<span><i (click)="favs($event,movie)" class="fa fa-heart"></i></span></h5>
+        <!-- </div> -->
+            <!-- <div class="card-body" > -->
+            <p class="card-text">Year:{{movie.release_date}}</p>
+            <p class="card-text">Rating:{{movie.vote_average}}</p>
+            <a  class="btn btn-primary" (click)="highlightSelected(movie)">Read More</a>
+            </div>
+    </div>
+   </div>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer --> 
+
+
+
