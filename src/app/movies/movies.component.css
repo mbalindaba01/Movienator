@@ -9,4 +9,29 @@ i {
     color: gray;
    }
 
+.card-title {
+    font-size: 14px;
+    padding: 0;
+}
 
+.title-container{
+    display: flex;
+    flex-grow: 2 1;
+    height: 50px;
+    width: 100%;
+}
+
+i .fa {
+    float: right;
+    text-align: right;
+}
+
+.text-holder{
+    font-size: 12px;
+    height: 30px;
+    width: 100%;
+}
+
+btn {
+    margin-bottom: 10px;
+}
